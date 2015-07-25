@@ -1,4 +1,4 @@
-# Grid Eye Electric Imp
+# Grid Eye for the Electric Imp
 
 This Grid-Eye code was ported over from Arduino to the Electric Imp.
 Original Arduino code can be found here:
