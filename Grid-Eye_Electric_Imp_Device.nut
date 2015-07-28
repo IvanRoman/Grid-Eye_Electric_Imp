@@ -29,7 +29,6 @@ function GridEye(){
 	celsius = temperature * 0.25;
 
 	aveTemp += celsius;
-  	
   }
   i2c.write(i2c_grideye, "\x0E")
   local upperLevelTherm = i2c.read(i2c_grideye, "", 1);
@@ -48,4 +47,5 @@ function GridEye(){
   imp.wakeup(0.25, GridEye)
 }
 
+//Begin the loop
 GridEye();
