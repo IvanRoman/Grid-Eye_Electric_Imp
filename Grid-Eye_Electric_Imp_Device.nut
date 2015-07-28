@@ -30,10 +30,8 @@ function GridEye(){
 	aveTemp += celsius;
   }
   i2c.write(i2c_grideye, "\x0E")
-  local upperLevelTherm = i2c.read(i2c_grideye, "", 1);
-  local lowerLevelTherm = i2c.read(i2c_grideye, "", 1);
-  upperLevelTherm = upperLevelTherm[0]
-  lowerLevelTherm = lowerLevelTherm[0]
+  local upperLevelTherm = i2c.read(i2c_grideye, "", 1)[0];
+  local lowerLevelTherm = i2c.read(i2c_grideye, "", 1)[0];
   local temperatureTherm = ((lowerLevelTherm << 8) | upperLevelTherm);
   local thermReading = temperatureTherm * 0.0625;
 
