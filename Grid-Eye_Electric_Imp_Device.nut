@@ -6,7 +6,6 @@ hardware.i2c12.configure(CLOCK_SPEED_100_KHZ);
 //Original I2C address is 0x068. Shifted to the right one bit is 0xD0
 const i2c_grideye = 0xD0;
 
-
 function GridEye(){
   //server.log("Beginning Program")
   local pixelTempL = "\x80";
@@ -23,7 +22,7 @@ function GridEye(){
 
 	local temperature = ((upperLevel << 8) | lowerLevel);
 	if (temperature > 2047){
-		temperature = temperature - 4096;
+		temperature -= 4096;
 	}
 
 	celsius = temperature * 0.25;
